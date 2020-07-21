@@ -97,7 +97,7 @@ const ENDebugMenu = ({ navigation }: ENDebugMenuProps): JSX.Element => {
   return (
     <NavigationBarWrapper title={"EN Debug Menu"} onBackPress={backToSettings}>
       {loading ? (
-        <View style={{ flex: 1, justifyContent: "center" }}>
+        <View style={styles.loadingIndicator}>
           <ActivityIndicator size={"large"} />
         </View>
       ) : (
@@ -188,6 +188,10 @@ const styles = StyleSheet.create({
   },
   lastListItem: {
     borderBottomWidth: 0,
+  },
+  loadingIndicator: {
+    flex: 1,
+    justifyContent: "center",
   },
 })
 
