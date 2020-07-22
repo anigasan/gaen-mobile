@@ -20,13 +20,12 @@ const SCREEN_OPTIONS = {
 }
 
 const MainNavigator: FunctionComponent = () => {
-  const { isComplete } = useOnboardingContext()
-  const isOnboardingComplete = isComplete
+  const { onboardingIsComplete } = useOnboardingContext()
 
   return (
     <NavigationContainer>
       <Stack.Navigator screenOptions={SCREEN_OPTIONS}>
-        {isOnboardingComplete ? (
+        {onboardingIsComplete ? (
           <>
             <Stack.Screen name={"App"} component={MainTabNavigator} />
             <Stack.Screen
